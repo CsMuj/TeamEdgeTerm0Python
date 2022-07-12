@@ -13,6 +13,7 @@
 
 print("My Simple Calculator")
 
+
 # -------------------------------------------- 
 
 # Part 1: 
@@ -29,15 +30,19 @@ print("My Simple Calculator")
 
 # Write a function called add_numbers that will take two numbers and return the sum.
 
-
-
-
+def add_numbers(x, y):
+	return x+y
+	
 
 
 
 # Write a function called sub_numbers that will take two numbers and return the difference.
 
-
+def sub_numbers(x, y):
+	return x-y
+	
+	
+	
 
 
 
@@ -68,14 +73,18 @@ print("My Simple Calculator")
 
 # Write a function called multiply_numbers that will take two numbers and return the product.
 
-
+def multiply_numbers(x, y):
+	return x*y
+	
 
 
 
 
 # Write a function called divide_numbers that will take two numbers and return the quotient.
 
-
+def divide_numbers(x, y):
+	return x/y
+	
 
 
 
@@ -92,6 +101,16 @@ print("My Simple Calculator")
 # check_answers(divide_numbers(15, 4), `3.75`);
 
 # -------------------------------------------- 
+#Extra
+
+def Power_numbers(x, y):
+	return x**y
+
+
+def Remainder_numbers(x, y):
+	return x%y
+	
+	
 
 # Part 3: 
 
@@ -102,8 +121,26 @@ print("My Simple Calculator")
 
 # -------------------------------------------- 
 
+print("This calculator can add +, subtracted -, multiple *, divide /, to the power ** and find remainder")
 
+user_input = float(input("Enter first number"))
+user_input2 = input("Enter oprative")
+user_input3 = float(input("Enter second number"))
 
+if user_input2 == "+":
+	print(add_numbers(user_input, user_input3))
+elif user_input2 == "-":
+	print(sub_numbers(user_input, user_input3))
+elif user_input2 == "*":
+	print(multiply_numbers(user_input, user_input3))
+elif user_input2 == "/":
+	print(divide_numbers(user_input, user_input3))
+elif user_input2 == "**":
+	print(power_numbers(user_input, user_input3))
+elif user_input2 == "%":
+	print(Remainder_numbers(user_input, user_input3))
+else:
+	print("error")
 
 
 

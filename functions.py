@@ -4,7 +4,7 @@
 	# Functions are reusable pieces of code that make your code more modular.
 	
 	# If you are writing the same bit of code over and over, you are doing more work that you have to.
-	# Use functions to simplify your code and decrease the amount of work you're doing. 
+	# Use functions xto simplify your code and decrease the amount of work you're doing. 
 
 	# Any time you start thinking 'this is tedious', you can probably write a function for that task.
 
@@ -20,29 +20,62 @@ print("\n------------------- Challenge 1 -------------------\n")
 # **** Challenge 1: Problem 1 ****
 # Write a function called print_message() that prints any message you want.
 
+def print_message(x):
+	print(x)
+
+print_message('Hi\n')
 
 # **** Challenge 1: Problem 2 ****
 # Write a function called print_five_messages() that calls print_message() five times.
+
+def print_message5x(x):
+	print(x, x, x, x, x)
+
+print_message('Hi')
+
 
 
 # **** Challenge 1: Problem 3 ****
 # Write a function called get_user_input() that asks the user if they'd like to print your message
 # once or five times. Then call one of the two functions above based on what the user decides.
 
+Result = input('Print 1 or 5 times?')
+
+def print_message5x(x):
+	print(x, x, x, x, x)
+
+def print_message(x):
+	print(x)
+
+if Result.lower() == '5 times':
+	print_message5x('Hi')
+elif Result.lower() == '1 time':
+	print_message('Hi')
+	
 
 # **** Challenge 1: Problem 4 ****
 # Write a function called print_greeting() that prints a greeting message to the user.
 
+def print_greeting():
+	print('Hello, thank you for using functions program')
+
 
 # **** Challenge 1: Problem 5 ****
 # Write a function called print_closing() that prints a goodbye message to the user.
+
+def print_closing(x):
+	print(f'Goodbye, thank you {x} for using functions program')
 
 
 # **** Challenge 1: Problem 6 ****
 # Write a function called run() that greets the user, asks them for input, and sends a goodbye message.
 # Remember! Use the functions that you've already made. Don't hardcode anything!
 
-
+def run():
+	print_greeting()
+	name = input('Please input your name')
+	print_closing(name)
+run()
 
 # -------------------------------------------- 
 
@@ -62,6 +95,14 @@ print("\n------------------- Challenge 2 -------------------\n")
 		# sum_double(1, 2) → 3
 		# sum_double(3, 2) → 5
 		# sum_double(2, 2) → 8
+
+
+def sum_double(x, y):
+	addition = x+y
+	Multiplyer = addition*2
+	print(Multiplyer)
+
+sum_double(5, 10)
 
 # -------------------------------------------- 
 
@@ -86,6 +127,16 @@ print("\n------------------- Challenge 2 -------------------\n")
 
 # -------------------------------------------- 
 
+def makes_10(a, b):
+	
+	if a == 10 or b == 10:
+		print('True')
+	elif a+b==10:	
+		print('True')
+	else:
+		print('false')
+
+makes_10(5, 5)
 
 
 
@@ -111,6 +162,21 @@ print("\n------------------- Challenge 2 -------------------\n")
 
 # -------------------------------------------- 
 
+def alarm_clock(x, y):
+	
+	vaccation = y
+	
+	if vaccation == False:
+		if x == 0 or x == 6:
+			time = '10:00'
+		else:
+			time = '7:00'
+	else:
+		time = 'off'
+
+	print(time)	
+
+alarm_clock(6, True)
 
 
 
@@ -136,7 +202,16 @@ print("\n------------------- Challenge 2 -------------------\n")
 
 # -------------------------------------------- 
 
+def speeding_ticket(x):
 
+	if x < 60:
+		print('Result 0, No ticket')
+	elif x < 80 and x > 60:
+		print('Result 1, Small ticket')
+	else:
+		print('Result 2, Big ticket')
+
+speeding_ticket(170)
 
 
 

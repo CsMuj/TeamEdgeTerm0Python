@@ -1,4 +1,5 @@
 import random
+import time
 
 print("Let's play Rock Paper Scissors!")
 
@@ -12,7 +13,11 @@ while True:
     print(f"You played: {userInput} and the computer played: {computerSelection}")
     if userInput == computerSelection:
         print("It's a tie!")
-    elif((userInput = "rock" and computerSelection = "paper") or (userInput = "paper" and computerSelection = "scissors") or (userInput = "rock" and computerSelection = "scissors")):
-        console.log("You Lose!")
-    elif:
-        console.log("You Win!")
+        time.sleep(2)
+    elif userInput == "rock" and computerSelection == "paper" or userInput == "paper" and computerSelection == "scissors" or userInput == "scissors" and computerSelection == "rock":
+        print("You Lose!")
+        time.sleep(2.5)
+    else:
+        print("You Win!")
+        time.sleep(2.5)
+        #I just wanted to try something

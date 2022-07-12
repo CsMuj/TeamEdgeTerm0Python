@@ -19,7 +19,6 @@ def key():
     elif FinalAnswer == 3:
         print('Take risks. There may be danger, but there is much more to gain')
 
-
 def Key1():
 
     print('Your future is a vast one with much potential')

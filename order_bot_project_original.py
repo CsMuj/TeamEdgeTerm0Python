@@ -90,12 +90,19 @@ def drinks(x):
 	elif x == 3:
 		print("Water, Free")
 
+def order_menu():
 
-def order_system():
-
+	print("\n--Menu--\n")
+	print(f"\n --- Main Course ---\n1. Scrambled Eggs, ${format(scrambled_eggs, '.2f')}\n2. Chicken & Apple Sausage, ${format(chicken_apple_sausage, '.2f')}\n3. Roasted Sweet Potatoes, ${format(roasted_sweet_potatoes, '.2f')}")
+	print(f"\n --- Sub Course ---\n4. Country Grain Bread, ${format(country_grain_bread, '.2f')}\n5. Sliced fruit, ${format(sliced_fruit, '0.2f') }")
+	print(f"\n --- Drinks ---\n6. Cooled Snapple, ${format(cooled_Snapple, '.2f')}\n7. Cooled Tropicana, ${format(cooled_tropicana, '.2f')}\n8. Water, Free ")
+	print("\n --- Extra ---\nCoach jeremy's Jokes, You pick your price\n\n")
+	
 	answer_2 = input("What Main Course shall you have? \n").lower()
 	answer_3 = input("What Sub Course will you have?\n").lower()
 	answer_4 = input("What Drink do you want?\n").lower()
+
+
 
 	if answer_2 == "scrambled eggs":
 		cost_1 = scrambled_eggs
@@ -166,17 +173,7 @@ def order_system():
 	elif answer_6 > 3.5:
 		print("Great")
 	else:
-		print("Okay")
-
-def order_menu():
-
-	print("\n--Menu--\n")
-	print(f"\n --- Main Course ---\n1. Scrambled Eggs, ${format(scrambled_eggs, '.2f')}\n2. Chicken & Apple Sausage, ${format(chicken_apple_sausage, '.2f')}\n3. Roasted Sweet Potatoes, ${format(roasted_sweet_potatoes, '.2f')}")
-	print(f"\n --- Sub Course ---\n4. Country Grain Bread, ${format(country_grain_bread, '.2f')}\n5. Sliced fruit, ${format(sliced_fruit, '0.2f') }")
-	print(f"\n --- Drinks ---\n6. Cooled Snapple, ${format(cooled_Snapple, '.2f')}\n7. Cooled Tropicana, ${format(cooled_tropicana, '.2f')}\n8. Water, Free ")
-	print("\n --- Extra ---\nCoach jeremy's Jokes, You pick your price\n\n")
-	
-	
+		print("okay")
 	
 
 answer_1 = input("\nHello, would you like to order food via CodeNext Lab food bar? Yes or No?\n Note you must order a Main Course, Sub Course and Drink\n\n").lower()
