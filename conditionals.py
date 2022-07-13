@@ -12,13 +12,14 @@ print("\n------------------- Challenge 1 -------------------\n")
    # Prompt the user to enter their age.
    # Write conditional statements that print out whether the user is legally allowed to drive in your city. 
 
+print('Hello, this is a driving right check. Please enter your age')
 
+UserInput = input()
 
-
-
-
-
-
+if UserInput > '16':
+  print('You are of age to drive') 
+else :
+  print('You are not of age to drive', '\n\ndo not drive'.upper())
 
 
 
@@ -32,11 +33,28 @@ print("\n------------------- Challenge 2 -------------------\n")
    # Create three variables and assign them random scores. 
    # Write conditional statements that check which is the highest score and prints it.
 
+import random
 
+Score1 = random.randint(1,9)
+Score2 = random.randint(1,9)
+Score3 = random.randint(1,9)
 
+print('Game Test - You are player One\n\n')
 
-
-
+if Score1 > Score2 and Score1 > Score3:
+   print('Player One is the winner'.upper())
+elif Score2 > Score1 and Score2 > Score3:
+   print('Player Two is the winner'.upper())
+elif Score3 > Score1 and Score3 > Score2:
+   print('Player Three is the winner'.upper())
+elif Score1 == Score2 and Score1 > Score3 or Score1 == Score3 and Score1 > Score2:
+   print('Draw')
+elif Score2 == Score1 and Score2 > Score3 or Score2 == Score3 and Score2 > Score1:
+   print('Draw')
+elif Score3 == Score2 and Score3 > Score1 or Score3 == Score1 and Score3 > Score2:
+   print('Draw')
+elif Score1 == Score2 == Score3:
+   print('Total Draw'.upper())
 
 
 

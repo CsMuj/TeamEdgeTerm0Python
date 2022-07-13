@@ -16,32 +16,62 @@ active = True
 
 print("Welcome to Shopping List!")
 
-welcome_message = "Hi! I'm your shopping assistant. Let me take your order. \n You can type 'add milk' to add milk to your shopping list. \n or you can type 'remove milk' to remove it. \n"
+welcome_message = "Hi! I'm your shopping assistant. Let me take your order. \n You can type add to begin adding to your shopping list. \n or you can type remove to begin removing items. \n"
 
 print(welcome_message)
 
 
 #-->Todo: declare a shopping_list list
 
+shopping_list = []
 
 def prompt_user():
 
-    reply = input("What do you want to add or remove?  >>  ")
+    reply = input("What do you want to add or remove?  >>  ").lower()
 
     return reply
 
 def check_answer(ans):
-    pass
+    
 
+    if ans == "add":
+        add_item()
+    elif ans == "remove":
+        remove_item()
+    else:
+        print("error")
+        prompt_user()
+   
 
 def add_item():
-#this function can take in a string and store it in an array
-    pass
+
+    user_item = input("what item do you want")
+   
+    if user_item in shopping_list:
+        print("One of each item only")
+        prompt_user()
+    else:
+        shopping_list.append(user_item)
+        print("Sucessfully added", user_item)
+        print(shopping_list)
 
 
 def remove_item():
-    pass
+    
+    user_remove_item = input("What item do you want to remove")
+
+    if user_remove_item not in shopping_list:
+        print("No such item in cart")
+        prompt_user()
+    else:
+        shopping_list.remove(user_remove_item)
+        print("Sucessfully removed", user_remove_item)
+        print(shopping_list)
+
 
 while active:
 
     check_answer(prompt_user()) #this makes the program continously prompt and check response while the boolean 'active' returns True
+
+intital = prompt_user()
+check_answer(intital)
