@@ -91,6 +91,34 @@ def drinks(x):
 		print("Water, Free")
 
 
+def receipt_system(x,y,z,t,j):
+	taxed_price = format(round(x*1+tax, 2), '.2f')
+
+	print(f"\n -- Sub Total -- {format(round(x, 2), '.2f')}")
+
+	main_course(y)
+	sub_course(z)
+	drinks(t)
+	print("Jeremy's jokes", format(j, '.2f'))
+
+	print("Tax", taxed_price)
+
+	answer_5 = float(input('how much do want to tip?'))
+
+	final = float(taxed_price)*(1+answer_5)
+
+	print("Total", format(round(final, 2), '.2f'))
+	answer_6 = float(input("how was your expirence out of 5. Whole numbers only "))
+		
+	if answer_6 <= 2:
+		print("Oh really? Well then I'll give you a discount, your total is", format(round(final*.70, 2), '.2f'))
+	elif answer_6 <= 3.5 and not answer_6 <= 2:
+		print("Alright. You know what enjoy a small discount", format(round(final*.9, 2), '.2f'))
+	elif answer_6 > 3.5:
+		print("Great")
+	else:
+		print("Okay..")
+
 def order_system():
 
 	answer_2 = input("What Main Course shall you have? \n").lower()
@@ -137,36 +165,14 @@ def order_system():
 		time.sleep(2)
 		order_menu()
 	
-	cost_5 = float(input("How much do you want to pay for jeremy's jokes?"))
+	cost_5 = float(input("How much do you want to pay for jeremy's jokes? YOU MUST PAY SOMETHING :D\n"))
 
 	sub_total = cost_3+cost_5
+
+	receipt_system(sub_total, main, sub, juice,cost_5)
 	
-	taxed_price = format(round(sub_total*1+tax, 2), '.2f')
-
-	print(f"\n -- Sub Total -- {format(round(sub_total, 2), '.2f')}")
-
-	main_course(main)
-	sub_course(sub)
-	drinks(juice)
-	print("Jeremy's jokes", format(cost_5, '.2f'))
-
-	print("Tax", taxed_price)
-
-	answer_5 = float(input('how much do want to tip? Enter decimal number only'))
-	final = float(taxed_price)*(1+answer_5)
-
-	print("Total", format(round(final, 2), '.2f'))
-
-	answer_6 = float(input("how was your expirence out of 5. Whole numbers only "))
 	
-	if answer_6 <= 2:
-		print("Oh really? Well then I'll give you a discount, your total is", format(round(final*.70, 2), '.2f'))
-	elif answer_6 <= 3.5 and not answer_6 <= 2:
-		print("Alright. You know what enjoy a small discount", format(round(final*.9, 2), '.2f'))
-	elif answer_6 > 3.5:
-		print("Great")
-	else:
-		print("Okay")
+	
 
 def order_menu():
 
@@ -175,6 +181,8 @@ def order_menu():
 	print(f"\n --- Sub Course ---\n4. Country Grain Bread, ${format(country_grain_bread, '.2f')}\n5. Sliced fruit, ${format(sliced_fruit, '0.2f') }")
 	print(f"\n --- Drinks ---\n6. Cooled Snapple, ${format(cooled_Snapple, '.2f')}\n7. Cooled Tropicana, ${format(cooled_tropicana, '.2f')}\n8. Water, Free ")
 	print("\n --- Extra ---\nCoach jeremy's Jokes, You pick your price\n\n")
+
+	order_system()
 	
 	
 	
