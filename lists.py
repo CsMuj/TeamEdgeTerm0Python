@@ -195,8 +195,12 @@ print("letter by letter: " + str(word_split_list))
 #using this you can split strings up by any character!
 
 #-->TODO: Change the name of the person who is late in this sentence and print it.
-split_me = "I heard alrighty was late to class today."
-print(split_me)
+split_me = "I heard was person late to class today."
+splited_me = split_me.split(" ")
+print(splited_me)
+splited_me[splited_me.index("person")] = "Danny"
+
+print(splited_me)
 
 #-->TODO: Add an exclamation mark to this sentence using split() and append(), then print. (yes, there are other ways, but...)
 make_me_exciting = "What a wonderful day"

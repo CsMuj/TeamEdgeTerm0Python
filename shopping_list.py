@@ -16,7 +16,7 @@ active = True
 
 print("Welcome to Shopping List!")
 
-welcome_message = "Hi! I'm your shopping assistant. Let me take your order. \n You can type add to begin adding to your shopping list. \n or you can type remove to begin removing items. \n"
+welcome_message = "Hi! I'm your shopping assistant. Let me take your order. \n You can type add to begin adding to your shopping list. \n or you can type remove to begin removing items. \n Also note you may only take one of any item. \n"
 
 print(welcome_message)
 
@@ -26,52 +26,46 @@ print(welcome_message)
 shopping_list = []
 
 def prompt_user():
+ 
+    reply = input("What do you want to add or remove? Example: add Bacon  >>  ").lower()
+    
+    list_1 = reply.split(" ")
 
-    reply = input("What do you want to add or remove?  >>  ").lower()
-
-    return reply
+    return list_1
 
 def check_answer(ans):
     
-
-    if ans == "add":
-        add_item()
-    elif ans == "remove":
-        remove_item()
+    if len(ans) == 2:
+        if ans[0] == "add":
+            add_item(ans)
+        elif ans[0] == "remove":
+            remove_item(ans)
+        else:
+            print("That is not a valid answer")
     else:
-        print("error")
-        prompt_user()
-   
-
-def add_item():
-
-    user_item = input("what item do you want")
-   
-    if user_item in shopping_list:
-        print("One of each item only")
-        prompt_user()
-    else:
-        shopping_list.append(user_item)
-        print("Sucessfully added", user_item)
-        print(shopping_list)
-
-
-def remove_item():
+        print("That is not a valid answer")
     
-    user_remove_item = input("What item do you want to remove")
-
-    if user_remove_item not in shopping_list:
-        print("No such item in cart")
-        prompt_user()
+def add_item(ans):
+   
+    if ans[1] in shopping_list:
+        print("\nOne of each item only\n")
+    elif ans[1] == "" or ans[1].isspace():
+        print("\nThat is not a valid answer.\n")
     else:
-        shopping_list.remove(user_remove_item)
-        print("Sucessfully removed", user_remove_item)
-        print(shopping_list)
+        shopping_list.append(ans[1])
+        print("\nSucessfully added\n\n", ans[1])
+        print("Your current items >> ", shopping_list)
 
+def remove_item(ans):
+
+    if ans[1] not in shopping_list:
+        print("\nNo such item in cart\n")       
+    else:
+        shopping_list.remove(ans[1])
+        print("\nSucessfully removed\n\n", ans[1])
+        print("Your current items >> ", shopping_list)
 
 while active:
 
     check_answer(prompt_user()) #this makes the program continously prompt and check response while the boolean 'active' returns True
 
-intital = prompt_user()
-check_answer(intital)
