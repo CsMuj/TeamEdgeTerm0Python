@@ -15,6 +15,7 @@
  #      asking, "Iknow you are a _____, but what am I?"
  # 
  # ***************************************************************/
+import random
 
 print("------------------- CHALLENGE 1 : IN YOUR PRIME -------------------")
 
@@ -41,7 +42,12 @@ def test_prime(n):
     return True
 
 #-->TODO: Declare a while loop that prints all the prime numbers between 0 and 100, use test_prime() helper function
+num3 = 0
+while num3 <= 100:
+    if test_prime(num3) == True:
+        print(num3)
 
+    num3 += 1
 
 
 print("------------------- CHALLENGE 2 : FOUND   -------------------")
@@ -50,8 +56,12 @@ print("------------------- CHALLENGE 2 : FOUND   -------------------")
 items = ["pencil" , "eraser" , "mirror" , "comb" , "spoon" , "key" , "earrings" ,"cat food" , "magazine"]
 
 #-->TODO: Use a while loop to search the contents of a list for the key! If it exists, print "found the key!"
+active = True
 
-
+while active == True:
+  items.remove("pencil")
+  print("Pencil removed")
+  active = False
 
 print("------------------- CHALLENGE 3 : BUGGIN   -------------------")
 
@@ -59,6 +69,11 @@ print("------------------- CHALLENGE 3 : BUGGIN   -------------------")
 #One more thing...to stop an infite loop you hit Control + C in the terminal  
 
 #-->TODO: Make me count  2, 4, 6,..., 50
+amount = 0
+
+while amount < 51:
+    print(amount)
+    amount += 2
 
 def even_numbers_to_fifty():
     num = 50
@@ -68,18 +83,18 @@ def even_numbers_to_fifty():
 even_numbers_to_fifty()
 
 #-->TODO: Make this design  below
-#
-#          [ 0 ]
-#          [ 0, 1 ]
-#          [ 0, 1, 2 ]
-#          [ 0, 1, 2, 3 ]
-#          [ 0, 1, 2, 3, 4 ]
-#          [ 0, 1, 2, 3, 4, 5 ]
-#          [ 0, 1, 2, 3, 4 ]
-#          [ 0, 1, 2, 3 ]
-#          [ 0, 1, 2 ]
-#          [ 0, 1 ]
-#          [ 0 ]
+
+        # [ 0 ]
+        # [ 0, 1 ]
+        # [ 0, 1, 2 ]
+        # [ 0, 1, 2, 3 ]
+        # [ 0, 1, 2, 3, 4 ]
+        # [ 0, 1, 2, 3, 4, 5 ]
+        # [ 0, 1, 2, 3, 4 ]
+        # [ 0, 1, 2, 3 ]
+        # [ 0, 1, 2 ]
+        # [ 0, 1 ]
+        # [ 0 ]
 
 
 
@@ -92,6 +107,12 @@ def pattern():
         my_list.append(index)
         print(my_list)
         index += 1
+    while index <= 10:
+        my_list.pop() 
+        print(my_list)
+        index += 1
+    print("End")
+      
 
 pattern()
 
@@ -103,6 +124,20 @@ print("------------------- CHALLENGE 4 : MATH QUIZ   -------------------")
 #-->TODO: Make a Math Quiz that asks two random numbers (between 0 and 100 to make it easy).
 #         The user enters the answer. If wrong, keep prompting. If correct, say congrats!!
 #         Use this handy boolean to get you started! You will need input()!
+answer_flag = False
+
+while not answer_flag:
+    
+    num1 = random.randint(0,100)
+    num2 = random.randint(0,100)
+
+    user_input = int(input(f"What is the answer to {num1} + {num2}"))    
+    
+    if user_input == num1 + num2:
+        print("You guessed right!")
+        answer_flag = True
+    else:
+        print("You Guessed wrong!")
 
 is_correct = False
 
@@ -116,14 +151,20 @@ print("------------------- CHALLENGE 5 : WHAT AM I?   -------------------")
 keep_asking = False
 
 def prompt_user():
-    pass
+    user_input_2 = input("I know you are a coder, but what are we?").lower()
+    response(user_input_2)
 
 def response(response):
-    pass
+    global keep_asking
+    
+    if response == "codenexter":
+        print("Yes, that is the key")
+        keep_asking = True 
+    else:
+        pass
 
-while keep_asking:
-    #response(prompt_user())
-    pass
+while not keep_asking:
+    response(prompt_user())
 
 #-->TODO: Challenge! write a secret word to break out of the loop!
 

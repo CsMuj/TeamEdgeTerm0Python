@@ -26,7 +26,10 @@ for x in range(11):
 
 #-->TODO: Write a loop that prints a happy birthday message for every year you have been alive.
 
+years_alive = 5
 
+for x in range(years_alive):
+    print("Happy Birthday!")
 
 print("------------------- CHALLENGE 2 : ITERATOR ----------------------")
 
@@ -38,10 +41,11 @@ for x in colors:
     print("The color is: " + x)
 
 #-->TODO: Declare a list with at least 5 animals. You provide the animals.
-animals = []
+animals = ["bird", "Tree", "rabbit", "cat", "tiger"]
 
 #-->TODO: Print all the animals in the array with a for loop. 
-
+for x in animals:
+    print(x)
 
 
 print("------------------- CHALLENGE 3 : EVEN COUNTDOWN ------------------")
@@ -57,10 +61,19 @@ else:
     print(str(random) + " is odd!")
 
 #-->TODO: Write a function that counts BACKWARDS from 100 and prints only even numbers
-
+def back_count():
+    for x in range(100, -1, -2):
+        print(x)
 
 #-->TODO: Write a function that counts BACKWARDS from the given random number and prints only odd numbers
+random_number = 100
 
+def rand_back():
+    for x in range(random_number, -1, -1):
+        if x % 2 != 0:
+            print(x)
+
+rand_back()
 
 print("------------------- CHALLENGE 4 : Finder ------------------")
 
@@ -72,15 +85,22 @@ else:
     print("No, that color is not one of my favorites")
 
 #-->TODO Declare a list of any strings you  want: cities, friends, movies, etc.
-
+list1 = ["J.C", "Benny", "Natanael"]
 
 
 #-->TODO Write function to prompt the user to "Guess" if an element is present in your list. Store their response in a variable. 
 #   --> If their guess is in your list, print CONGRATULATIONS!
 
+def user_guess_promt():
+    answer = input("Guess a value on the list")
+
+    if answer in list1: 
+        print("CONGRATS!")
+    else:
+        print("Nope")
 
 #-->TODO Call your function.
-
+user_guess_promt()
 
 
 print("------------------- CHALLENGE 5 : Nested ------------------")
@@ -99,5 +119,26 @@ for color in colors:
 
 #-->TODO Write a function that prints every letter in a sentence that a user enters.
 
+# user_input = input("Make a setence")
+
+# user_input_split = user_input.split(" ")
+
+# for inputs in user_input_split:
+#     print(inputs)
+
+# user_input_split.sort(key=len)
+
+# print("The shortest word!!  >>  ", user_input_split[0])
+
+#2nd option working progress
+
+user_input = input("Make a setence")
+
+user_input_split = user_input.split(" ")
+user_input_split.sort(key=len)
+
+for inputs in user_input_split:
+    print(inputs)
+pin
 
 #-->CHALLENGE: Let the user know which word is the shortest one!

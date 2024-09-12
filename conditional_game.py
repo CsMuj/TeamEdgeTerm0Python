@@ -17,7 +17,7 @@ def key():
     elif FinalAnswer == 2:
         print('Be cautious. Do not rush.')
     elif FinalAnswer == 3:
-        print('Take risks. There may be danger, but there is much more to gain')
+        print('Take risks. There may be dpythonanger, but there is much more to gain')
 
 
 def Key1():
@@ -55,7 +55,7 @@ def Key2():
         print(f'Your life is plenty long a solid {Return} years')
     else:
         print(f"Incredible, unbelievable you will live {Return} Years....")  
-    Key  
+    key()      
 
 def Key3():
     
